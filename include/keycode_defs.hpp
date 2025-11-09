@@ -1,0 +1,74 @@
+#pragma once
+#include <cstdint>
+
+/** Modifier definitions */
+constexpr uint8_t HID_MOD_LCTRL = 0x01;
+constexpr uint8_t HID_MOD_LSHIFT = 0x02;
+constexpr uint8_t HID_MOD_LALT = 0x04;
+constexpr uint8_t HID_MOD_LGUI = 0x08;
+constexpr uint8_t HID_MOD_RCTRL = 0x10;
+constexpr uint8_t HID_MOD_RSHIFT = 0x20;
+constexpr uint8_t HID_MOD_RALT = 0x40;
+
+/** Keycode definitions */
+constexpr uint8_t KEYCODE_RESERVED = 0x00;
+constexpr uint8_t KEYCODE_A = 0x04;
+constexpr uint8_t KEYCODE_B = 0x05;
+constexpr uint8_t KEYCODE_C = 0x06;
+constexpr uint8_t KEYCODE_D = 0x07;
+constexpr uint8_t KEYCODE_E = 0x08;
+constexpr uint8_t KEYCODE_F = 0x09;
+constexpr uint8_t KEYCODE_G = 0x0A;
+constexpr uint8_t KEYCODE_H = 0x0B;
+constexpr uint8_t KEYCODE_I = 0x0C;
+constexpr uint8_t KEYCODE_J = 0x0D;
+constexpr uint8_t KEYCODE_K = 0x0E;
+constexpr uint8_t KEYCODE_L = 0x0F;
+constexpr uint8_t KEYCODE_M = 0x10;
+constexpr uint8_t KEYCODE_N = 0x11;
+constexpr uint8_t KEYCODE_O = 0x12;
+constexpr uint8_t KEYCODE_P = 0x13;
+constexpr uint8_t KEYCODE_Q = 0x14;
+constexpr uint8_t KEYCODE_R = 0x15;
+constexpr uint8_t KEYCODE_S = 0x16;
+constexpr uint8_t KEYCODE_T = 0x17;
+constexpr uint8_t KEYCODE_U = 0x18;
+constexpr uint8_t KEYCODE_V = 0x19;
+constexpr uint8_t KEYCODE_W = 0x1A;
+constexpr uint8_t KEYCODE_X = 0x1B;
+constexpr uint8_t KEYCODE_Y = 0x1C;
+constexpr uint8_t KEYCODE_Z = 0x1D;
+constexpr uint8_t KEYCODE_1 = 0x1E;
+constexpr uint8_t KEYCODE_2 = 0x1F;
+constexpr uint8_t KEYCODE_3 = 0x20;
+constexpr uint8_t KEYCODE_4 = 0x21;
+constexpr uint8_t KEYCODE_5 = 0x22;
+constexpr uint8_t KEYCODE_6 = 0x23;
+constexpr uint8_t KEYCODE_7 = 0x24;
+constexpr uint8_t KEYCODE_8 = 0x25;
+constexpr uint8_t KEYCODE_9 = 0x26;
+constexpr uint8_t KEYCODE_0 = 0x27;
+constexpr uint8_t KEYCODE_ENTER = 0x28;
+constexpr uint8_t KEYCODE_ESCAPE = 0x29;
+constexpr uint8_t KEYCODE_TAB = 0x2B;
+constexpr uint8_t KEYCODE_SPACE = 0x2C;
+constexpr uint8_t KEYCODE_F1 = 0x3A;
+constexpr uint8_t KEYCODE_F2 = 0x3B;
+constexpr uint8_t KEYCODE_F3 = 0x3C;
+constexpr uint8_t KEYCODE_F4 = 0x3D;
+constexpr uint8_t KEYCODE_F5 = 0x3E;
+constexpr uint8_t KEYCODE_F6 = 0x3F;
+constexpr uint8_t KEYCODE_F7 = 0x40;
+constexpr uint8_t KEYCODE_F8 = 0x41;
+constexpr uint8_t KEYCODE_F9 = 0x42;
+constexpr uint8_t KEYCODE_F10 = 0x43;
+constexpr uint8_t KEYCODE_F11 = 0x44;
+constexpr uint8_t KEYCODE_F12 = 0x45;
+constexpr uint8_t KEYCODE_PaUp = 0x4B;
+constexpr uint8_t KEYCODE_PaDn = 0x4E;
+constexpr uint8_t KEYCODE_Left = 0x50;
+constexpr uint8_t KEYCODE_Right = 0x4F;
+constexpr uint8_t KEYCODE_Up = 0x52;
+constexpr uint8_t KEYCODE_Down = 0x51;
+constexpr uint8_t KEYCODE_SHIFT_L = 0xE1;
+constexpr uint8_t KEYCODE_SHIFT_R = 0xE5;
