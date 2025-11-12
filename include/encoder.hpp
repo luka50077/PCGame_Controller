@@ -13,7 +13,7 @@ class Encoder {
   void update();
 
   int16_t get_value() const {
-    return enc_value / 4; // divide by 4 so that one click changes value by 1
+    return enc_value / 4;  // divide by 4 so that one click changes value by 1
   }
 };
 

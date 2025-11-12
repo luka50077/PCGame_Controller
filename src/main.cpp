@@ -22,13 +22,11 @@
 #include "dma.h"
 #include "gpio.h"
 #include "tim.h"
-#include "usart.h"
 #include "usb_device.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "keyboard.hpp"
-#include "led.hpp"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -95,7 +93,6 @@ int main(void) {
   MX_GPIO_Init();
   MX_DMA_Init();
   MX_TIM6_Init();
-  MX_USART1_UART_Init();
   MX_USB_DEVICE_Init();
   MX_TIM1_Init();
   MX_TIM3_Init();

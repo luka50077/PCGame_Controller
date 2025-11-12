@@ -11,7 +11,6 @@ void Keyboard::init() {
   while (hUsbDeviceFS.dev_state != USBD_STATE_CONFIGURED) {
     current_mode = Mode::OFF;
   }
-  current_mode = Mode::KALPA_Select;
 
   led0.LED::init(&htim3, TIM_CHANNEL_1, LED::LED_Side::LEFT);
   led1.LED::init(&htim4, TIM_CHANNEL_3, LED::LED_Side::RIGHT);
@@ -19,8 +18,7 @@ void Keyboard::init() {
 }
 
 const uint8_t* Keyboard::getKeymap(const int16_t enc_value) {
-  Mode mode = static_cast<Mode>(enc_value % static_cast<int>(Mode::Count));
-  switch (mode) {
+  switch (current_mode) {
     case Mode::OFF:
       return key_map_off;
     case Mode::DIVA_Select:
@@ -47,8 +45,9 @@ void Keyboard::update() {
   if (cnt % 50 == 0) {  // every 25ms
     led0.LED::update(keyboard.getMode());
     encoder.update();
-    setMode(static_cast<Mode>((encoder.get_value()) %
-                              static_cast<int>(Mode::Count)));
+    setMode(static_cast<Mode>(
+        (encoder.get_value()) %
+        (static_cast<int>(Mode::Count) - 1)));  // exclude Mode OFF
   } else if (cnt % 50 == 25) {
     led1.LED::update(keyboard.getMode());
   }
@@ -84,5 +83,11 @@ void Keyboard::sendReport() {
     USBD_HID_SendReport(&hUsbDeviceFS, (uint8_t*)&new_report,
                         sizeof(keyboardHID_t));
     prev_report = new_report;
+  }
+
+  if (current_mode == Mode::DIVA_Play &&
+      new_report.key[0] != KEYCODE_RESERVED) {
+    // Mirror first key to both reserved keys
+    setDIVAReservedKeys(new_report.key[0], new_report.key[0]);
   }
 }

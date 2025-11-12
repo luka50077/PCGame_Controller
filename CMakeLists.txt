@@ -69,7 +69,7 @@ if(EXISTS /proc/sys/fs/binfmt_misc/WSLInterop)
    add_custom_target(write COMMAND make -s -j8 COMMAND /mnt/c/Program\ Files/STMicroelectronics/STM32Cube/STM32CubeProgrammer/bin/STM32_Programmer_CLI.exe -c port=SWD -d ./${PROJECT_NAME}.elf -s)
    add_custom_target(write_only COMMAND /mnt/c/Program\ Files/STMicroelectronics/STM32Cube/STM32CubeProgrammer/bin/STM32_Programmer_CLI.exe -c port=SWD -d ./${PROJECT_NAME}.elf -s)
 elseif(EXISTS /Applications/STMicroelectronics)
-   # MAC
+   # MAC (NOT TESTED)
    add_custom_target(write COMMAND make -s -j8 COMMAND /Applications/STMicroelectronics/STM32Cube/STM32CubeProgrammer/STM32CubeProgrammer.app/Contents/MacOs/bin/STM32_Programmer_CLI -c port=SWD -d ./${PROJECT_NAME}.elf -s)
    add_custom_target(write_only COMMAND /Applications/STMicroelectronics/STM32Cube/STM32CubeProgrammer/STM32CubeProgrammer.app/Contents/MacOs/bin/STM32_Programmer_CLI -c port=SWD -d ./${PROJECT_NAME}.elf -s)
 else()
