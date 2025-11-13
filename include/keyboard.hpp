@@ -29,9 +29,9 @@ class Keyboard : public LED, public Switch, public Encoder {
 
   const uint8_t key_map_off[SWITCH_NUM] = {0};
   const uint8_t key_map_DIVA_Select[SWITCH_NUM] = {
-      KEYCODE_ESCAPE,  KEYCODE_Down, KEYCODE_Left, KEYCODE_SHIFT_L,
+      KEYCODE_ESCAPE,  KEYCODE_Down, KEYCODE_Left, KEYCODE_Q,
       KEYCODE_R,       KEYCODE_TAB,  KEYCODE_Up,   KEYCODE_Right,
-      KEYCODE_SHIFT_R, KEYCODE_ENTER};
+      KEYCODE_E, KEYCODE_ENTER};
   uint8_t key_map_DIVA_Play[SWITCH_NUM] = {
       KEYCODE_ESCAPE,   KEYCODE_V, KEYCODE_C, KEYCODE_X, KEYCODE_RESERVED,
       KEYCODE_RESERVED, KEYCODE_B, KEYCODE_N, KEYCODE_M, KEYCODE_RESERVED};
