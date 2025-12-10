@@ -9,8 +9,9 @@ constexpr int SWITCH_NUM = 10;
 
 class Switch {
  private:
-  const int SW_DELAY = 10;
-  std::array<int, SWITCH_NUM> cnt = {};
+  const int ONE_SHOT_TIME = 10;
+  std::array<bool, SWITCH_NUM> oneshot_state = {};
+  std::array<int, SWITCH_NUM> oneshot_cnt = {};
   const std::array<uint16_t, SWITCH_NUM> gpio_pins = {
       Escape_Pin,     SW2_Pin, SW1_Pin, SW0_Pin, SpaceL_Pin,
       Encoder_SW_Pin, SW3_Pin, SW4_Pin, SW5_Pin, SpaceR_Pin};

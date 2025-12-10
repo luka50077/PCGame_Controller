@@ -11,7 +11,7 @@ void cycle_callback_start() {
 }
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
-  if (htim == &htim6) {  // 500us
+  if (htim == &htim6) {  // 50ms
     keyboard.update();
   }
 }

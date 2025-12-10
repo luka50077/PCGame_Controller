@@ -39,18 +39,18 @@ const uint8_t* Keyboard::getKeymap(const int16_t enc_value) {
 }
 
 void Keyboard::update() {
-  static long cnt = 0;
-  cnt++;
-  sw.Switch::read();
-  if (cnt % 50 == 0) {  // every 25ms
+  static Mode prev_mode = Mode::OFF;
+  Mode curr_mode = getMode();
+
+  if(curr_mode != prev_mode){
     led0.LED::update(keyboard.getMode());
-    encoder.update();
-    setMode(static_cast<Mode>(
-        (encoder.get_value()) %
-        (static_cast<int>(Mode::Count) - 1)));  // exclude Mode OFF
-  } else if (cnt % 50 == 25) {
     led1.LED::update(keyboard.getMode());
   }
+  prev_mode = curr_mode;
+  encoder.update();
+  setMode(static_cast<Mode>(
+      (encoder.get_value()) %
+      (static_cast<int>(Mode::Count) - 1)));  // exclude Mode OFF
 }
 
 void Keyboard::sendReport() {
@@ -78,12 +78,9 @@ void Keyboard::sendReport() {
     }
   }
 
-  // send report only when there is a change
-  if (std::memcmp(&prev_report, &new_report, sizeof(keyboardHID_t)) != 0) {
     USBD_HID_SendReport(&hUsbDeviceFS, (uint8_t*)&new_report,
                         sizeof(keyboardHID_t));
     prev_report = new_report;
-  }
 
   if (current_mode == Mode::DIVA_Play &&
       new_report.key[0] != KEYCODE_RESERVED) {
