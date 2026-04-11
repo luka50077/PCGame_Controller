@@ -70,6 +70,9 @@ void LED::set_color(LED_Color_t *dst, Mode m_mode) {
       std::copy(std::begin(LED_COLOR_KALPA_SELECT),
                 std::end(LED_COLOR_KALPA_SELECT), src);
       break;
+    case Mode::BMS:
+      std::copy(std::begin(LED_COLOR_BMS), std::end(LED_COLOR_BMS), src);
+      break;
     default:
       std::copy(std::begin(LED_COLOR_OFF), std::end(LED_COLOR_OFF), src);
       break;

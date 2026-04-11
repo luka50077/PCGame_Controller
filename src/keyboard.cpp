@@ -33,6 +33,8 @@ const uint8_t* Keyboard::getKeymap(const int16_t enc_value) {
       return key_map_KALPA_5k_RIGHT;
     case Mode::KALPA_5k_LEFT:
       return key_map_KALPA_5k_LEFT;
+    case Mode::BMS:
+      return key_map_BMS;
     default:
       return key_map_off;
   }

@@ -32,15 +32,14 @@ class LED {
   LED_Side m_which_side = LED_Side::LEFT;
 
   const LED_Color_t LED_OFF = {0, 0, 0};
-  const LED_Color_t LED_RED = {48, 0, 0};
-  const LED_Color_t LED_GREEN = {0, 48, 0};
-  const LED_Color_t LED_BLUE = {0, 0, 80};
-  const LED_Color_t LED_YELLOW = {32, 32, 0};
-  const LED_Color_t LED_CYAN = {0, 32, 32};
-  const LED_Color_t LED_MAGENTA = {48, 0, 24};
-  const LED_Color_t LED_WHITE = {30, 30, 30};
-  const LED_Color_t LED_ORANGE = {48, 16, 0};
-
+  const LED_Color_t LED_RED = {72, 0, 0};
+  const LED_Color_t LED_GREEN = {0, 72, 0};
+  const LED_Color_t LED_BLUE = {0, 0, 72};
+  const LED_Color_t LED_YELLOW = {48, 48, 0};
+  const LED_Color_t LED_CYAN = {0, 48, 48};
+  const LED_Color_t LED_MAGENTA = {72, 0, 36};
+  const LED_Color_t LED_WHITE = {45, 45, 45};
+  const LED_Color_t LED_ORANGE = {72, 24, 0};
   const std::array<LED_Color_t, 10> LED_COLOR_OFF = {
       LED_OFF, LED_OFF, LED_OFF, LED_OFF, LED_OFF,
       LED_OFF, LED_OFF, LED_OFF, LED_OFF, LED_OFF};
@@ -60,8 +59,11 @@ class LED {
       LED_CYAN, LED_RED,  LED_GREEN,  LED_WHITE, LED_ORANGE,
       LED_OFF,  LED_BLUE, LED_YELLOW, LED_WHITE, LED_CYAN};
   const std::array<LED_Color_t, 10> LED_COLOR_KALPA_SELECT = {
-      LED_CYAN,    LED_RED,  LED_GREEN,  LED_WHITE, LED_ORANGE,
+      LED_CYAN,    LED_RED,  LED_GREEN,  LED_WHITE, LED_CYAN,
       LED_MAGENTA, LED_BLUE, LED_YELLOW, LED_WHITE, LED_CYAN};
+  const std::array<LED_Color_t, 10> LED_COLOR_BMS = {
+      LED_CYAN, LED_WHITE, LED_WHITE, LED_WHITE, LED_BLUE,
+      LED_OFF, LED_WHITE, LED_BLUE, LED_RED, LED_BLUE};
 
  public:
   void init(TIM_HandleTypeDef *htim, uint32_t channel, LED_Side which_side);

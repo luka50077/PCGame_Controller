@@ -6,7 +6,7 @@
 
 class Encoder {
  private:
-  int16_t enc_value = 100;
+  int16_t enc_value = 120;
 
  public:
   void init();
