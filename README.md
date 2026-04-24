@@ -1,11 +1,6 @@
 # PCGame Controller
 This is the firmware for a custom PC game controller designed for rhythm games". The controller features programmable LED lighting and can emulate keyboard inputs to interact with the games.
 
-## Article
-- [Part1: Design and Circuits](https://xenon01.hatenablog.com/entry/2025/11/02/163902)
-- [Part2: Soldering and Firmware](https://xenon01.hatenablog.com/entry/2025/11/13/143734)
-- [Part3: Under Construnction]
-
 ## Compile
 ```bash
 $ mkdir build && cd build
